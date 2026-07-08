@@ -6,7 +6,6 @@ const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -17,9 +16,9 @@ function Footer() {
 
   return (
     <footer className="bg-ink text-paper">
-      <div className="max-w-[1460px] mx-auto px-6 py-16">
+      <div className="section-wrap py-16 md:py-20">
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-12">
-          <div>
+          <div className="max-w-xs">
             <a
               href="#home"
               onClick={(e) => {
@@ -30,7 +29,7 @@ function Footer() {
             >
               Aashik<span className="text-coral">.</span>
             </a>
-            <p className="mt-4 text-paper/60 max-w-xs leading-relaxed">
+            <p className="mt-4 text-paper/60 leading-relaxed">
               Python Full Stack Developer building scalable, responsive web
               applications.
             </p>
@@ -40,23 +39,23 @@ function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="hover:text-coral transition-colors"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-paper/10 hover:bg-coral transition-colors"
               >
-                <FaGithub size={18} />
+                <FaGithub size={16} />
               </a>
               <a
                 href={portfolio.personal.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="hover:text-coral transition-colors"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-paper/10 hover:bg-coral transition-colors"
               >
-                <FaLinkedin size={18} />
+                <FaLinkedin size={16} />
               </a>
             </div>
           </div>
 
-          <div className="flex gap-16">
+          <div className="grid grid-cols-2 gap-10 sm:gap-16">
             <div>
               <p className="tracked uppercase text-xs font-semibold text-paper/40 mb-4">
                 Navigate
@@ -87,7 +86,7 @@ function Footer() {
                 <li>
                   <a
                     href={`mailto:${portfolio.personal.email}`}
-                    className="hover:text-coral transition-colors"
+                    className="hover:text-coral transition-colors break-all"
                   >
                     {portfolio.personal.email}
                   </a>
@@ -108,7 +107,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-paper/10 text-sm text-paper/40">
+        <div className="mt-14 pt-8 border-t border-paper/10 text-sm text-paper/40">
           © {new Date().getFullYear()} {portfolio.personal.name}. All rights
           reserved.
         </div>

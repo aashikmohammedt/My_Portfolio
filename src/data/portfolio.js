@@ -2,7 +2,7 @@ const portfolio = {
   personal: {
     name: "Aashik Mohammed T",
     title: "Software Developer",
-    subtitle: "Python Full Stack Developer",
+    subtitle: "Aspiring Full Stack Developer",
     tagline: "React Developer  •  Django Developer  •  MERN Stack",
     email: "aashikmohammedt7@gmail.com",
     phone: "+91 9994689996",
@@ -14,7 +14,7 @@ const portfolio = {
 
   about: {
     description:
-      "Final-year Computer Science Engineering student with internship experience in Python Full Stack Development and hands-on experience in web application development using Python, Django, React.js, and MongoDB through academic projects and internship training. Seeking an entry-level Software Developer role to apply programming, web development, and problem-solving skills while contributing to innovative software solutions.",
+  "Computer Science Engineering graduate with hands-on experience building full-stack web applications using Python, Django, React.js, Node.js, Express.js, and MongoDB. Passionate about developing scalable software, solving real-world problems, and continuously learning modern technologies while pursuing an entry-level Software Developer role.",
   },
 
   stats: [
@@ -171,29 +171,6 @@ const portfolio = {
       title: "Programming in Java",
       issuer: "NPTEL",
       level: "Elite + Silver Certification",
-    },
-  ],
-
-  faqs: [
-    {
-      question: "What technologies do you work with?",
-      answer:
-        "Python, Java, Django, React.js, Node.js, Express.js, MongoDB, and REST API integration, with a focus on responsive full-stack web applications.",
-    },
-    {
-      question: "Are you open to internship or full-time roles?",
-      answer:
-        "Yes — actively seeking entry-level Software Developer roles, primarily in Chennai and Tamil Nadu, and open to remote opportunities as well.",
-    },
-    {
-      question: "Can I see your resume?",
-      answer:
-        "Absolutely — you can download it directly using the résumé button in the hero section or the link in the footer.",
-    },
-    {
-      question: "How can I get in touch?",
-      answer:
-        "Reach out via email at aashikmohammedt7@gmail.com, call +91 9994689996, or connect on LinkedIn/GitHub linked in the footer.",
     },
   ],
 };

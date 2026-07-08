@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import portfolio from "../data/portfolio";
 
@@ -8,22 +8,24 @@ const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
-function Navbar() {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
+
     window.addEventListener("scroll", onScroll);
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+
     return () => {
       document.body.style.overflow = "";
     };
@@ -31,53 +33,83 @@ function Navbar() {
 
   const handleNavClick = (href) => {
     setOpen(false);
+
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-          scrolled ? "bg-paper/90 backdrop-blur shadow-sm" : "bg-transparent"
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-paper/90 backdrop-blur-md shadow-sm"
+            : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1460px] mx-auto flex items-center justify-between px-6 py-5">
+        <div
+          className={`section-wrap flex items-center justify-between gap-4 px-5 sm:px-8 md:px-9 lg:px-10 py-3 sm:py-4 transition-colors duration-300 ${
+            scrolled ? "text-ink" : "text-paper"
+          }`}
+        >
+          {/* Logo */}
+
           <a
             href="#home"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick("#home");
             }}
-            className="text-xl font-black tracked uppercase"
+            className="flex-shrink-0 min-w-0 truncate text-xl sm:text-2xl font-black uppercase tracked leading-none"
           >
             Aashik<span className="text-coral">.</span>
           </a>
 
-          <div className="flex items-center gap-5">
+          {/* Right Side */}
+
+          <div className="flex items-center gap-2.5 sm:gap-4 md:gap-5 flex-shrink-0">
+            <a
+              href={`mailto:${portfolio.personal.email}`}
+              aria-label="Email"
+              className="hover:text-coral transition-colors"
+            >
+              <Mail
+                size={18}
+                className="w-[18px] h-[18px] sm:w-5 sm:h-5"
+              />
+            </a>
+
             <a
               href={portfolio.personal.github}
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="hidden sm:inline-flex text-ink hover:text-coral transition-colors"
+              className="hover:text-coral transition-colors"
             >
-              <FaGithub size={18} />
+              <FaGithub className="w-[18px] h-[18px] sm:w-5 sm:h-5" />
             </a>
+
             <a
               href={portfolio.personal.linkedin}
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="hidden sm:inline-flex text-ink hover:text-coral transition-colors"
+              className="hover:text-coral transition-colors"
             >
-              <FaLinkedin size={18} />
+              <FaLinkedin className="w-[18px] h-[18px] sm:w-5 sm:h-5" />
             </a>
 
             <button
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-ink/15 hover:border-coral hover:text-coral transition-colors"
+              className={`flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border transition-all duration-300 hover:text-coral hover:border-coral ${
+                scrolled ? "border-ink/20" : "border-paper/30"
+              }`}
             >
               <Menu size={20} />
             </button>
@@ -85,81 +117,96 @@ function Navbar() {
         </div>
       </header>
 
-      {/* Offcanvas menu */}
+      {/* Mobile Drawer */}
+
       <div
         className={`fixed inset-0 z-[60] transition-opacity duration-300 ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       >
+        {/* Overlay */}
+
         <div
-          className="absolute inset-0 bg-ink/60"
           onClick={() => setOpen(false)}
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         />
-        <nav
-          className={`absolute top-0 right-0 h-full w-full max-w-sm bg-ink text-paper px-10 py-10 flex flex-col transition-transform duration-300 ${
+
+        {/* Drawer */}
+
+        <aside
+          className={`absolute top-0 right-0 h-full w-[86%] max-w-[380px] bg-ink text-paper px-8 sm:px-10 py-8 flex flex-col transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
+          {/* Header */}
+
           <div className="flex items-center justify-between mb-16">
-            <span className="text-lg font-black tracked uppercase">
+            <h2 className="text-lg font-black uppercase tracked">
               Menu
-            </span>
+            </h2>
+
             <button
               onClick={() => setOpen(false)}
-              aria-label="Close menu"
-              className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-paper/20 hover:border-coral hover:text-coral transition-colors"
+              aria-label="Close Menu"
+              className="flex items-center justify-center w-11 h-11 rounded-full border border-paper/20 hover:border-coral hover:text-coral transition-colors"
             >
-              <X size={20} />
+              <X size={22} />
             </button>
           </div>
 
-          <ul className="flex flex-col gap-6">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
+          {/* Links */}
+
+          <ul className="space-y-7">
+            {NAV_LINKS.map((item) => (
+              <li key={item.href}>
                 <a
-                  href={link.href}
+                  href={item.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick(link.href);
+                    handleNavClick(item.href);
                   }}
-                  className="text-3xl font-bold hover:text-coral transition-colors"
+                  className="text-2xl sm:text-3xl font-bold hover:text-coral transition-colors"
                 >
-                  {link.label}
+                  {item.label}
                 </a>
               </li>
             ))}
           </ul>
 
-          <div className="mt-auto flex items-center gap-5 pt-10">
-            <a
-              href={portfolio.personal.github}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="hover:text-coral transition-colors"
-            >
-              <FaGithub size={20} />
-            </a>
-            <a
-              href={portfolio.personal.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="hover:text-coral transition-colors"
-            >
-              <FaLinkedin size={20} />
-            </a>
-            <a
-              href={`mailto:${portfolio.personal.email}`}
-              className="text-sm text-paper/70 hover:text-coral transition-colors ml-2"
-            >
-              {portfolio.personal.email}
-            </a>
+          {/* Footer */}
+
+          <div className="mt-auto pt-10 border-t border-paper/10">
+            <div className="flex items-center gap-6">
+              <a
+                href={portfolio.personal.github}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-coral transition-colors"
+              >
+                <FaGithub size={22} />
+              </a>
+
+              <a
+                href={portfolio.personal.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-coral transition-colors"
+              >
+                <FaLinkedin size={22} />
+              </a>
+
+              <a
+                href={`mailto:${portfolio.personal.email}`}
+                className="hover:text-coral transition-colors text-sm truncate"
+              >
+                {portfolio.personal.email}
+              </a>
+            </div>
           </div>
-        </nav>
+        </aside>
       </div>
     </>
   );
 }
-
-export default Navbar;
