@@ -20,71 +20,80 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="pt-20 sm:pt-24 lg:pt-24 pb-0 lg:pb-24 overflow-hidden"
+      className="pt-20 sm:pt-24 lg:pt-24 pb-0 lg:pb-24 overflow-hidden relative"
+      style={{
+        background: `
+      radial-gradient(circle at top left,
+        rgba(249,115,22,.18) 0%,
+        rgba(249,115,22,.10) 20%,
+        transparent 55%
+      ),
+      #111111
+    `,
+      }}
     >
-      <div className="section-wrap">
-        <div
-          className="relative overflow-hidden"
-          style={{
-            minHeight: "100svh",
-            background: `
-              radial-gradient(circle at top left, rgba(240,117,108,0.16), transparent 32%),
-              radial-gradient(circle at bottom right, rgba(255,255,255,0.05), transparent 38%),
-              #111111
-            `,
-          }}
-        >
-          <div className="grid lg:grid-cols-[1fr_1fr] items-center gap-1 sm:gap-2 lg:gap-12 min-h-screen">
-            {/* Left Content */}
-
-            <div
-              className="
-  order-1
-  lg:order-1
-  flex
-  flex-col
-  justify-center
-  items-center
-  lg:items-center
-  text-center
-  lg:text-left
-  px-8 sm:px-12 md:px-16 lg:px-12 xl:px-16
-"
-            >
-              {/* Centers the text/CTA block within its grid track so it
+      <div
+        className="relative overflow-hidden"
+        style={{
+          minHeight: "100svh",
+        }}
+      >
+        <div className="grid lg:grid-cols-[1fr_1fr] items-center gap-1 sm:gap-2 lg:gap-12 min-h-screen">
+          {/* Left Content */}
+          <div className="order-1 flex justify-center lg:justify-end">
+            <div className="section-wrap w-full">
+              <div
+                className="
+        flex
+        flex-col
+        justify-center
+        items-center
+        lg:items-start
+        text-center
+        lg:text-left
+        px-8
+        sm:px-12
+        md:px-16
+        lg:pl-[20%]
+        lg:pr-12
+        xl:pl-[22%]
+      "
+              >
+                {/* Centers the text/CTA block within its grid track so it
                  shifts inward from the raw edge, while the text inside
                  stays left-aligned. Column width/track is untouched, so
                  the image side and mobile layout are unaffected. */}
-              <div className="w-full lg:max-w-xl xl:max-w-2xl">
-                <motion.h1
-                  {...fadeUp()}
-                  className="font-black leading-[0.95] text-paper"
-                  style={{
-                    fontSize: "clamp(2.4rem,5vw + 1rem,5.8rem)",
-                  }}
-                >
-                  Aashik
-                  <br />
-                  <span className="sm:whitespace-nowrap">
-                    Mohammed T
-                  </span>
-                </motion.h1>
+                <div className="w-full lg:max-w-xl xl:max-w-2xl">
+                  <motion.h1
+                    {...fadeUp()}
+                    className="font-black leading-[0.95] text-paper"
+                    style={{
+                      fontSize: "clamp(2.4rem,5vw + 1rem,5.8rem)",
+                    }}
+                  >
+                    Aashik
+                    <br />
+                    <span className="sm:whitespace-nowrap">
+                      Mohammed T
+                    </span>
+                  </motion.h1>
 
-                <motion.p
-                  {...fadeUp(0.15)}
-                  className="tracked uppercase font-bold text-coral mt-4 lg:mt-6"
-                  style={{
-                    fontSize: "clamp(.85rem,.9vw + .6rem,1rem)",
-                  }}
-                >
-                  Aspiring Full Stack Developer
-                </motion.p>
+                  <motion.p
+                    {...fadeUp(0.15)}
+                    className="tracked uppercase font-bold text-coral mt-8 sm:mt-10 lg:mt-12"
+                    style={{
+                      fontSize: "clamp(.85rem,.9vw + .6rem,1rem)",
+                    }}
+                  >
+                    Aspiring Full Stack Developer
+                  </motion.p>
 
-                <motion.div
-                  {...fadeUp(0.3)}
-                  className="
-                    mt-8
-                    lg:mt-12
+                  <motion.div
+                    {...fadeUp(0.3)}
+                    className="
+                    mt-12
+                    sm:mt-16
+                    lg:mt-20
                     flex
                     flex-wrap
                     justify-center
@@ -93,10 +102,10 @@ export default function Hero() {
                     gap-4
                     lg:gap-6
                   "
-                >
-                  <a
-                    href="#contact"
-                    className="
+                  >
+                    <a
+                      href="#contact"
+                      className="
                       inline-flex
                       items-center
                       justify-center
@@ -116,15 +125,15 @@ export default function Hero() {
                       duration-300
                       hover:scale-105
                     "
-                  >
-                    Get In Touch
-                    <ArrowRight size={18} />
-                  </a>
+                    >
+                      Get In Touch
+                      <ArrowRight size={18} />
+                    </a>
 
-                  <a
-                    href={personal.resume}
-                    download
-                    className="
+                    <a
+                      href={personal.resume}
+                      download
+                      className="
                       inline-flex
                       items-center
                       justify-center
@@ -139,43 +148,48 @@ export default function Hero() {
                       rounded-full
                       border
                       border-paper/30
-                      text-paper
+                      !text-white
                       font-semibold
                       transition-all
                       duration-300
-                      hover:border-white
-hover:bg-white/5
+                      hover:scale-105
+                      hover:bg-coral
+                      hover:border-coral
+                      hover:!text-black
                     "
-                  >
-                    <Download size={18} />
-                    Download Resume
-                  </a>
-                </motion.div>
+                    >
+                      <Download size={18} />
+                      Download Resume
+                    </a>
+                  </motion.div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div
-              className="
+          {/* Right Content - image column, full-bleed, no container restricting its width */}
+          <div
+            className="
                 order-2
                 lg:order-2
                 relative
                 flex
-items-center
-justify-center
-lg:items-end
+                items-center
+                justify-center
+                lg:items-end
                 h-[380px]
-sm:h-[500px]
-md:h-[620px]
-lg:h-[100svh]
+                sm:h-[500px]
+                md:h-[620px]
+                lg:h-[100svh]
                 overflow-hidden
               "
-            >
-              <motion.img
-                {...fadeUp(0.2)}
-                src={profilePhoto}
-                alt={personal.name}
-                draggable={false}
-                className="
+          >
+            <motion.img
+              {...fadeUp(0.2)}
+              src={profilePhoto}
+              alt={personal.name}
+              draggable={false}
+              className="
                   absolute
                   inset-0
                   w-full
@@ -186,39 +200,41 @@ lg:h-[100svh]
                   pointer-events-none
                   select-none
                 "
-                style={{
-                  filter:
-                    "brightness(.84) contrast(1.05) saturate(.95)",
-                }}
-              />
+              style={{
+                filter:
+                  "brightness(.84) contrast(1.05) saturate(.95)",
+              }}
+            />
 
-              {/* Left Fade */}
-              <div
-                className="absolute inset-y-0 left-0 w-24 sm:w-44 lg:w-72 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to right,#111111 0%,rgba(17,17,17,.82) 25%,rgba(17,17,17,.35) 60%,transparent 100%)",
-                }}
-              />
+            {/* Left Fade */}
+            <div
+              className="absolute inset-y-0 left-0 pointer-events-none"
+              style={{
+                width: "clamp(140px, 32vw, 520px)",
+                background:
+                  "linear-gradient(to right, #111111 0%, rgba(17,17,17,.92) 18%, rgba(17,17,17,.65) 45%, rgba(17,17,17,.25) 75%, transparent 100%)",
+              }}
+            />
 
-              {/* Top Fade */}
-              <div
-                className="absolute inset-x-0 top-0 h-24 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to bottom,rgba(17,17,17,.35),transparent)",
-                }}
-              />
+            {/* Top Fade */}
+            <div
+              className="absolute inset-x-0 top-0 pointer-events-none"
+              style={{
+                height: "clamp(80px, 12vw, 160px)",
+                background:
+                  "linear-gradient(to bottom, rgba(17,17,17,.40), transparent)",
+              }}
+            />
 
-              {/* Bottom Fade */}
-              <div
-                className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to top,rgba(17,17,17,.45),transparent)",
-                }}
-              />
-            </div>
+            {/* Bottom Fade */}
+            <div
+              className="absolute inset-x-0 bottom-0 pointer-events-none"
+              style={{
+                height: "clamp(100px, 14vw, 220px)",
+                background:
+                  "linear-gradient(to top, rgba(17,17,17,.50), transparent)",
+              }}
+            />
           </div>
         </div>
       </div>

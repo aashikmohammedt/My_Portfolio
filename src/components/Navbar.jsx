@@ -46,16 +46,14 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled
             ? "bg-paper/90 backdrop-blur-md shadow-sm"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div
-          className={`section-wrap flex items-center justify-between gap-4 px-5 sm:px-8 md:px-9 lg:px-10 py-3 sm:py-4 transition-colors duration-300 ${
-            scrolled ? "text-ink" : "text-paper"
-          }`}
+          className={`section-wrap flex items-center justify-between gap-4 py-3 sm:py-4 transition-colors duration-300 ${scrolled ? "text-ink" : "text-paper"
+            }`}
         >
           {/* Logo */}
 
@@ -107,9 +105,8 @@ export default function Navbar() {
             <button
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className={`flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border transition-all duration-300 hover:text-coral hover:border-coral ${
-                scrolled ? "border-ink/20" : "border-paper/30"
-              }`}
+              className={`flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border transition-all duration-300 hover:text-coral hover:border-coral ${scrolled ? "border-ink/20" : "border-paper/30"
+                }`}
             >
               <Menu size={20} />
             </button>
@@ -120,11 +117,10 @@ export default function Navbar() {
       {/* Mobile Drawer */}
 
       <div
-        className={`fixed inset-0 z-[60] transition-opacity duration-300 ${
-          open
+        className={`fixed inset-0 z-[60] transition-opacity duration-300 ${open
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
-        }`}
+          }`}
       >
         {/* Overlay */}
 
@@ -136,9 +132,8 @@ export default function Navbar() {
         {/* Drawer */}
 
         <aside
-          className={`absolute top-0 right-0 h-full w-[86%] max-w-[380px] bg-ink text-paper px-8 sm:px-10 py-8 flex flex-col transition-transform duration-300 ${
-            open ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`absolute top-0 right-0 h-full w-[86%] max-w-[380px] bg-ink text-paper px-8 sm:px-10 py-8 flex flex-col transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           {/* Header */}
 
