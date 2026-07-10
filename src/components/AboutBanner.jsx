@@ -7,14 +7,14 @@ export default function AboutBanner() {
   return (
     <section className="bg-coral">
       <div className="section-wrap">
-        <div className="w-full max-w-4xl mx-auto px-6 sm:px-8 md:px-10 py-12 sm:py-16 md:py-20">
+        <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 py-12 sm:py-16 md:py-20">
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             className="
-              text-paper text-center font-medium
+              text-ink text-center font-medium
               leading-relaxed
             "
             style={{

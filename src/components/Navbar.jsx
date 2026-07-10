@@ -63,16 +63,18 @@ export default function Navbar() {
               e.preventDefault();
               handleNavClick("#home");
             }}
-            className="flex-shrink-0 min-w-0 truncate text-xl sm:text-2xl font-black uppercase tracked leading-none"
+            className="flex-shrink-0 min-w-0 truncate text-lg sm:text-xl lg:text-2xl font-black uppercase tracked leading-none -ml-1 sm:-ml-2 lg:ml-0"
           >
             Aashik<span className="text-coral">.</span>
           </a>
 
           {/* Right Side */}
 
-          <div className="flex items-center gap-2.5 sm:gap-4 md:gap-5 flex-shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-4 md:gap-5 flex-shrink-0 -mr-1 sm:-mr-2 lg:mr-0">
             <a
-              href={`mailto:${portfolio.personal.email}`}
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${portfolio.personal.email}`}
+              target="_blank"
+              rel="noreferrer"
               aria-label="Email"
               className="hover:text-coral transition-colors"
             >
@@ -105,8 +107,7 @@ export default function Navbar() {
             <button
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className={`flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border transition-all duration-300 hover:text-coral hover:border-coral ${scrolled ? "border-ink/20" : "border-paper/30"
-                }`}
+              className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 transition-all duration-300 hover:text-coral"
             >
               <Menu size={20} />
             </button>
@@ -153,7 +154,7 @@ export default function Navbar() {
 
           {/* Links */}
 
-          <ul className="space-y-7">
+          <ul className="space-y-5">
             {NAV_LINKS.map((item) => (
               <li key={item.href}>
                 <a
@@ -162,7 +163,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className="text-2xl sm:text-3xl font-bold hover:text-coral transition-colors"
+                  className="text-xl sm:text-2xl font-bold hover:text-coral transition-colors"
                 >
                   {item.label}
                 </a>
@@ -193,10 +194,13 @@ export default function Navbar() {
               </a>
 
               <a
-                href={`mailto:${portfolio.personal.email}`}
-                className="hover:text-coral transition-colors text-sm truncate"
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${portfolio.personal.email}`}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Email"
+                className="hover:text-coral transition-colors"
               >
-                {portfolio.personal.email}
+                <Mail size={22} />
               </a>
             </div>
           </div>

@@ -49,14 +49,15 @@ const portfolio = {
     programmingLanguages: ["Python", "Java"],
     frontend: ["HTML", "CSS", "JavaScript", "React.js"],
     backend: ["Node.js", "Express.js", "Django"],
-    database: ["MongoDB"],
+    database: ["MySQL","MongoDB"],
     versionControl: ["Git", "GitHub"],
-    tools: ["VS Code", "Adobe Photoshop", "Canva"],
+    tools: ["VS Code", "Adobe Photoshop", "Canva", "Splunk"],
     concepts: [
       "REST API Integration",
       "Responsive Web Design",
-      "Software Development Lifecycle (SDLC)",
-      "Object-Oriented Programming (OOPS)",
+      "Software Development Lifecycle",
+      "Object-Oriented Programming ",
+      "Basics of Cybersecurity"
     ],
     softSkills: [
       "Problem Solving",
@@ -65,6 +66,7 @@ const portfolio = {
       "Communication",
       "Time Management",
       "Attention to Detail",
+      "Curious Learner",
     ],
   },
 
@@ -77,11 +79,11 @@ const portfolio = {
           period: "2022 - 2026",
           heading: "B.E. Computer Science Engineering",
           detail:
-            "C.K. College of Engineering & Technology, Cuddalore (Anna University) — CGPA 7.61/10",
+            "C.K. College of Engineering & Technology, Cuddalore",
         },
         {
           period: "2021 - 2022",
-          heading: "HSC — 68.3%",
+          heading: "HSC",
           detail: "Kamaraj Matriculation Higher Secondary School, Chidambaram",
         },
       ],
@@ -92,15 +94,15 @@ const portfolio = {
       entries: [
         {
           period: "Feb - Apr 2026",
-          heading: "Python Full Stack Intern, Ocean Academy",
+          heading: "Python Full Stack Intern, Ocean Academy, Pondicherry",
           detail:
             "Developed web applications, integrated RESTful APIs, and maintained responsive UIs using Python, Django, JavaScript, and MongoDB.",
         },
         {
-          period: "Ongoing",
+          period: "2024 – 2025",
           heading: "Hackathon Coordinator",
           detail:
-            "Coordinated a 5-hour college hackathon involving 100+ participants.",
+            "Coordinated two college hackathons, managing event operations and supporting 100+ participants across the 2024 and 2025 editions.",
         },
       ],
     },
@@ -110,7 +112,7 @@ const portfolio = {
       entries: [
         {
           period: "Tech Fest 2026",
-          heading: "Event Volunteer, Ocean Academy",
+          heading: "Event Volunteer, Ocean Academy, Pondicherry",
           detail:
             "Supported event coordination and participant management at a national-level conference.",
         },
@@ -139,7 +141,7 @@ const portfolio = {
       description:
         "Full-stack library system with user authentication, book management, reservations, overdue tracking, and fine calculation.",
       github: "https://github.com/aashikmohammedt",
-      demo: "",
+      demo: "https://frontend-web-based-campus-library.onrender.com/",
     },
     {
       title: "Student Management System",
@@ -148,7 +150,7 @@ const portfolio = {
       description:
         "CRUD-based student record management system with database integration and responsive interfaces.",
       github: "https://github.com/aashikmohammedt",
-      demo: "",
+      demo: "https://student-management-system-cy6d.onrender.com/students/",
     },
     {
       title: "Placement Drive Management System",

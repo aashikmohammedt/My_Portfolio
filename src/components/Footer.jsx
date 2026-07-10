@@ -99,7 +99,7 @@ function Footer() {
                     download
                     className="hover:text-coral transition-colors"
                   >
-                    Download Résumé
+                    Download Resume
                   </a>
                 </li>
               </ul>

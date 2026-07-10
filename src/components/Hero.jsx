@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="pt-20 sm:pt-24 lg:pt-24 pb-0 lg:pb-24 overflow-hidden relative"
+      className="pt-28 sm:pt-32 md:pt-36 lg:pt-0 pb-0 overflow-hidden relative"
       style={{
         background: `
       radial-gradient(circle at top left,
@@ -36,7 +36,7 @@ export default function Hero() {
       <div className="relative overflow-hidden lg:min-h-[100svh]">
         <div className="grid lg:grid-cols-[1fr_1fr] items-center gap-1 sm:gap-2 lg:gap-12 lg:min-h-screen">
           {/* Left Content */}
-          <div className="order-1 flex justify-center lg:justify-end">
+          <div className="order-1 flex justify-center lg:justify-end lg:-translate-y-10">
             <div className="section-wrap w-full">
               <div
                 className="
@@ -50,16 +50,14 @@ export default function Hero() {
         px-8
         sm:px-12
         md:px-16
-        lg:pl-[20%]
-        lg:pr-12
-        xl:pl-[22%]
+        lg:px-0
       "
               >
                 {/* Centers the text/CTA block within its grid track so it
                  shifts inward from the raw edge, while the text inside
                  stays left-aligned. Column width/track is untouched, so
                  the image side and mobile layout are unaffected. */}
-                <div className="w-full lg:max-w-xl xl:max-w-2xl flex flex-col gap-10 sm:gap-14 lg:gap-16">
+                <div className="w-full lg:max-w-xl xl:max-w-2xl flex flex-col mb-8 sm:mb-10 lg:mb-0">
                   <motion.h1
                     {...fadeUp()}
                     className="font-black leading-[0.95] text-paper"
@@ -76,7 +74,7 @@ export default function Hero() {
 
                   <motion.p
                     {...fadeUp(0.15)}
-                    className="tracked uppercase font-bold text-coral"
+                    className="tracked uppercase font-bold text-coral mt-2 sm:mt-3 lg:mt-4"
                     style={{
                       fontSize: "clamp(.85rem,.9vw + .6rem,1rem)",
                     }}
@@ -87,13 +85,17 @@ export default function Hero() {
                   <motion.div
                     {...fadeUp(0.3)}
                     className="
-                    flex
+                    hidden
+                    lg:flex
                     flex-wrap
                     justify-center
                     lg:justify-start
                     items-center
                     gap-4
                     lg:gap-6
+                    mt-8
+                    sm:mt-10
+                    lg:mt-10
                     mb-12
                     sm:mb-16
                     lg:mb-0
@@ -106,24 +108,31 @@ export default function Hero() {
                       items-center
                       justify-center
                       gap-2
-                      h-14
-                      px-8
+                      lg:gap-1.5
+                      h-11
+                      lg:h-11
+                      px-6
+                      lg:px-6
                       w-full
-                      max-w-[280px]
-                      sm:w-[210px]
-                      lg:w-[230px]
+                      max-w-[220px]
+                      sm:w-[180px]
+                      lg:w-[190px]
                       sm:max-w-none
                       rounded-full
                       bg-coral
                       text-paper
                       font-semibold
+                      text-sm
+                      lg:text-sm
+                      lg:whitespace-nowrap
                       transition-all
                       duration-300
                       hover:scale-105
                     "
                     >
                       Get In Touch
-                      <ArrowRight size={18} />
+                      <ArrowRight size={16} className="lg:hidden" />
+                      <ArrowRight size={15} className="hidden lg:block" />
                     </a>
 
                     <a
@@ -134,27 +143,39 @@ export default function Hero() {
                       items-center
                       justify-center
                       gap-2
-                      h-14
-                      px-8
+                      lg:gap-1.5
+                      h-11
+                      lg:h-11
+                      px-6
+                      lg:px-6
                       w-full
-                      max-w-[280px]
-                      sm:w-[210px]
-                      lg:w-[230px]
+                      max-w-[220px]
+                      sm:w-[180px]
+                      lg:w-[190px]
                       sm:max-w-none
                       rounded-full
                       border
                       border-paper/30
+                      bg-[#111111]
                       !text-white
                       font-semibold
+                      text-sm
+                      lg:text-sm
+                      lg:whitespace-nowrap
                       transition-all
                       duration-300
                       hover:scale-105
                       hover:bg-coral
                       hover:border-coral
                       hover:!text-black
+                      active:scale-105
+                      active:bg-coral
+                      active:border-coral
+                      active:!text-black
                     "
                     >
-                      <Download size={18} />
+                      <Download size={16} className="lg:hidden" />
+                      <Download size={15} className="hidden lg:block" />
                       Download Resume
                     </a>
                   </motion.div>
@@ -191,7 +212,7 @@ export default function Hero() {
                   w-full
                   h-full
                   object-cover
-                  object-top
+                  object-[center_32%]
                   lg:object-bottom
                   pointer-events-none
                   select-none
@@ -200,9 +221,9 @@ export default function Hero() {
                 "
             />
 
-            {/* Left Fade - mobile/tablet */}
+            {/* Left Fade - all screen sizes */}
             <div
-              className="absolute inset-y-0 left-0 pointer-events-none lg:hidden"
+              className="absolute inset-y-0 left-0 pointer-events-none"
               style={{
                 width: "clamp(140px, 32vw, 520px)",
                 background:
@@ -210,9 +231,9 @@ export default function Hero() {
               }}
             />
 
-            {/* Right Fade - mobile/tablet */}
+            {/* Right Fade - all screen sizes */}
             <div
-              className="absolute inset-y-0 right-0 pointer-events-none lg:hidden"
+              className="absolute inset-y-0 right-0 pointer-events-none"
               style={{
                 width: "clamp(140px, 32vw, 520px)",
                 background:
@@ -220,33 +241,13 @@ export default function Hero() {
               }}
             />
 
-            {/* Left Fade - desktop (lighter so the face reads clearly) */}
+            {/* Top Fade - all screen sizes */}
             <div
-              className="absolute inset-y-0 left-0 pointer-events-none hidden lg:block"
-              style={{
-                width: "clamp(140px, 32vw, 520px)",
-                background:
-                  "linear-gradient(to right, #111111 0%, rgba(17,17,17,.55) 18%, rgba(17,17,17,.30) 40%, rgba(17,17,17,.10) 65%, transparent 100%)",
-              }}
-            />
-
-            {/* Top Fade - mobile/tablet */}
-            <div
-              className="absolute inset-x-0 top-0 pointer-events-none lg:hidden"
+              className="absolute inset-x-0 top-0 pointer-events-none"
               style={{
                 height: "clamp(120px, 22vw, 220px)",
                 background:
                   "linear-gradient(to bottom, #111111 0%, rgba(17,17,17,.85) 20%, rgba(17,17,17,.55) 50%, rgba(17,17,17,.2) 80%, transparent 100%)",
-              }}
-            />
-
-            {/* Top Fade - desktop */}
-            <div
-              className="absolute inset-x-0 top-0 pointer-events-none hidden lg:block"
-              style={{
-                height: "clamp(80px, 12vw, 160px)",
-                background:
-                  "linear-gradient(to bottom, rgba(17,17,17,.40), transparent)",
               }}
             />
 
@@ -259,6 +260,96 @@ export default function Hero() {
                   "linear-gradient(to top, rgba(17,17,17,.50), transparent)",
               }}
             />
+
+            {/* Mobile/Tablet CTA row - overlaid on the photo, hidden on desktop */}
+            <motion.div
+              {...fadeUp(0.3)}
+              className="
+                flex
+                lg:hidden
+                absolute
+                inset-x-0
+                bottom-6
+                sm:bottom-8
+                z-10
+                justify-center
+                items-center
+                gap-4
+                px-8
+                sm:px-12
+              "
+            >
+              <a
+                href="#contact"
+                className="
+                inline-flex
+                items-center
+                justify-center
+                gap-1.5
+                sm:gap-2
+                h-10
+                sm:h-11
+                px-3
+                sm:px-6
+                flex-1
+                max-w-[190px]
+                rounded-full
+                bg-coral
+                text-paper
+                font-semibold
+                text-xs
+                sm:text-sm
+                transition-all
+                duration-300
+                hover:scale-105
+              "
+              >
+                Get In Touch
+                <ArrowRight size={14} className="sm:hidden" />
+                <ArrowRight size={16} className="hidden sm:block" />
+              </a>
+
+              <a
+                href={resume}
+                download
+                className="
+                inline-flex
+                items-center
+                justify-center
+                gap-1.5
+                sm:gap-2
+                h-10
+                sm:h-11
+                px-3
+                sm:px-6
+                flex-1
+                max-w-[190px]
+                whitespace-nowrap
+                rounded-full
+                border
+                border-paper/30
+                bg-[#111111]
+                !text-white
+                font-semibold
+                text-xs
+                sm:text-sm
+                transition-all
+                duration-300
+                hover:scale-105
+                hover:bg-coral
+                hover:border-coral
+                hover:!text-black
+                active:scale-105
+                active:bg-coral
+                active:border-coral
+                active:!text-black
+              "
+              >
+                <Download size={14} className="sm:hidden" />
+                <Download size={16} className="hidden sm:block" />
+                Download Resume
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
