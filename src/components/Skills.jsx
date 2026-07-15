@@ -13,10 +13,13 @@ import {
   SiGit,
   SiGithub,
   SiSplunk,
+  SiTailwindcss,
+  SiVercel,
+  SiRender,
 } from "react-icons/si";
 import { FaJava, FaPalette } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
-import { TbBrandAdobePhotoshop } from "react-icons/tb";
+import { TbBrandAdobePhotoshop, TbBrandOpenai } from "react-icons/tb";
 import portfolio from "../data/portfolio";
 
 const GROUPS = [
@@ -37,6 +40,7 @@ const ICON_MAP = {
   Java: FaJava,
   HTML: SiHtml5,
   CSS: SiCss,
+  "Tailwind CSS": SiTailwindcss,
   JavaScript: SiJavascript,
   "React.js": SiReact,
   "Node.js": SiNodedotjs,
@@ -47,6 +51,10 @@ const ICON_MAP = {
   Git: SiGit,
   GitHub: SiGithub,
   "VS Code": VscVscode,
+  "Open AI": TbBrandOpenai,
+  Vercel: SiVercel,
+  "V0 by Vercel": SiVercel,
+  Render: SiRender,
   "Adobe Photoshop": TbBrandAdobePhotoshop,
   Canva: FaPalette,
   Splunk: SiSplunk,

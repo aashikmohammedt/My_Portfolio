@@ -47,11 +47,11 @@ const portfolio = {
 
   skills: {
     programmingLanguages: ["Python", "Java"],
-    frontend: ["HTML", "CSS", "JavaScript", "React.js"],
+    frontend: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React.js"],
     backend: ["Node.js", "Express.js", "Django"],
     database: ["MySQL","MongoDB"],
     versionControl: ["Git", "GitHub"],
-    tools: ["VS Code", "Adobe Photoshop", "Canva", "Splunk"],
+    tools: ["VS Code", "Open AI", "Vercel", "V0 by Vercel", "Render", "Adobe Photoshop", "Canva", "Splunk"],
     concepts: [
       "REST API Integration",
       "Responsive Web Design",

@@ -217,15 +217,14 @@ export default function Hero() {
                   pointer-events-none
                   select-none
                   [filter:brightness(.84)_contrast(1.05)_saturate(.95)]
-                  lg:[filter:brightness(1.05)_contrast(1.05)_saturate(1.05)]
+                  lg:[filter:brightness(1.15)_contrast(1.05)_saturate(1.05)]
                 "
             />
 
             {/* Left Fade - all screen sizes */}
             <div
-              className="absolute inset-y-0 left-0 pointer-events-none"
+              className="absolute inset-y-0 left-0 pointer-events-none w-[clamp(140px,32vw,520px)] lg:w-[14%] xl:w-[12%]"
               style={{
-                width: "clamp(140px, 32vw, 520px)",
                 background:
                   "linear-gradient(to right, #111111 0%, rgba(17,17,17,.92) 18%, rgba(17,17,17,.65) 45%, rgba(17,17,17,.25) 75%, transparent 100%)",
               }}
@@ -233,9 +232,8 @@ export default function Hero() {
 
             {/* Right Fade - all screen sizes */}
             <div
-              className="absolute inset-y-0 right-0 pointer-events-none"
+              className="absolute inset-y-0 right-0 pointer-events-none w-[clamp(140px,32vw,520px)] lg:w-[14%] xl:w-[12%]"
               style={{
-                width: "clamp(140px, 32vw, 520px)",
                 background:
                   "linear-gradient(to left, #111111 0%, rgba(17,17,17,.92) 18%, rgba(17,17,17,.65) 45%, rgba(17,17,17,.25) 75%, transparent 100%)",
               }}
@@ -243,9 +241,8 @@ export default function Hero() {
 
             {/* Top Fade - all screen sizes */}
             <div
-              className="absolute inset-x-0 top-0 pointer-events-none"
+              className="absolute inset-x-0 top-0 pointer-events-none h-[clamp(120px,22vw,220px)] lg:h-[9%]"
               style={{
-                height: "clamp(120px, 22vw, 220px)",
                 background:
                   "linear-gradient(to bottom, #111111 0%, rgba(17,17,17,.85) 20%, rgba(17,17,17,.55) 50%, rgba(17,17,17,.2) 80%, transparent 100%)",
               }}
@@ -253,9 +250,8 @@ export default function Hero() {
 
             {/* Bottom Fade */}
             <div
-              className="absolute inset-x-0 bottom-0 pointer-events-none"
+              className="absolute inset-x-0 bottom-0 pointer-events-none h-[clamp(100px,14vw,220px)] lg:h-[6%]"
               style={{
-                height: "clamp(100px, 14vw, 220px)",
                 background:
                   "linear-gradient(to top, rgba(17,17,17,.50), transparent)",
               }}
